@@ -181,7 +181,7 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 
 		switch (event.getButton()) {
 		case MouseEvent.BUTTON1:
-			if (!button.open()) {
+			if (!button.isOpen()) {
 				button.setOpen();
 				MinesweeperService.getInstance().open(row, col);
 			}
@@ -216,7 +216,7 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 	private void createNewField() {
 		setVisible(false);
 		panelPole.setVisible(false);
-		model.createField();
+		MinesweeperService.getInstance().createField(model);
 		createBoarder();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);

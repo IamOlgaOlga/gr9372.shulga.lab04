@@ -147,7 +147,7 @@ public class MinesweeperViewConsole implements MinesweeperView {
 	}
 	
 	private void createNewField(){
-		model.createField();
+		MinesweeperService.getInstance().createField(model);
 		cteateBoarder();
 		MinesweeperService.getInstance().setModel(model);
 		MinesweeperService.getInstance().setView(this);

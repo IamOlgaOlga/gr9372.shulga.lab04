@@ -24,7 +24,7 @@ public class MinesweeperModelIterator implements Iterator<Boolean> {
 			col = 0;
 			++row;
 		}
-		return model.getVal(row, col);
+		return model.getValue(row, col);
 	}
 
 	@Override

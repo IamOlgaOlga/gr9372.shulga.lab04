@@ -42,7 +42,7 @@ public class MinesweeperService {
 	}
 
 	public void setFlag(int row, int col) {
-		Boolean flag = !listElement[row][col].Flag();
+		Boolean flag = !listElement[row][col].isFlag();
 		listElement[row][col].setFlag(flag);
 		if (flag) {
 			countFlag++;
@@ -56,7 +56,7 @@ public class MinesweeperService {
 		if (time == 0) {
 			this.timer.start();
 		}
-		if (model.getVal(row, col)) {
+		if (model.getValue(row, col)) {
 			listElement[row][col].setMine();
 			blowUp();
 		} else {
@@ -114,6 +114,22 @@ public class MinesweeperService {
 
 	public static MinesweeperService getInstance() {
 		return INSTANCE;
+	}
+	
+	public void createField(MinesweeperModel model) {
+		int col = 0;
+		int row = 0;
+		Boolean element;
+		for (int i = 1; i <= model.getMines(); i++) {
+			
+			col = (int) Math.round(Math.random() * (model.getCols() - 2));
+			row = (int) Math.round(Math.random() * (model.getRows() - 2));
+			if(!model.getValue(row+1, col+1)){
+				model.setValue(row+1, col+1, true);
+			}else{i--;}			
+		}
+		
+			
 	}
 
 	public void setModel(MinesweeperModel model) {

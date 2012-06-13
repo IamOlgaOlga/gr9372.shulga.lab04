@@ -6,6 +6,7 @@ import gr9372.shulga.minesweeper.view.Element;
 
 public class Field implements Element{
 	private String value="- ";
+	private int numberMines=0;
 	private Boolean open = false;
 	private Boolean flag = false;
 	private Boolean mine=false;
@@ -13,8 +14,11 @@ public class Field implements Element{
 	
 	@Override 
 	public void setValue(int value) {
+		this.numberMines=value;
 		this.value=value+" ";		
 	}
+	
+	
 	
 	public String getValue(){
 		return this.value;
@@ -39,28 +43,38 @@ public class Field implements Element{
 	}
 
 	@Override
-	public Boolean Flag() {		
+	public Boolean isFlag() {		
 		return flag;
 	}
 	
-
+	@Override
 	public void setOpen(Boolean flag) {
 		this.open = flag;
 	}
 
+	@Override
 	public void setOpen() {
 		this.open = true;
 	}
 
-	public Boolean open() {
+	@Override
+	public Boolean isOpen() {
 		return this.open;
 	}
 
 	@Override
-	public Boolean Mine() {		
+	public Boolean isMine() {		
 		return mine;
 	}
 
+
+
+	@Override
+	public int getNumberMines() {		
+		return numberMines;
+	}
+
+	
 	
 
 }

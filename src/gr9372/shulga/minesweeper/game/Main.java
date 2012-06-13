@@ -11,6 +11,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import gr9372.shulga.minesweeper.model.MinesweeperModel;
 import gr9372.shulga.minesweeper.service.MinesweeperService;
+import gr9372.shulga.minesweeper.view.Element;
 import gr9372.shulga.minesweeper.view.MinesweeperView;
 import gr9372.shulga.minesweeper.viewImpl.MinesweeperViewConsole;
 import gr9372.shulga.minesweeper.viewImpl.MinesweeperViewSwing;
@@ -21,9 +22,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
 		MinesweeperModel model = new MinesweeperModel(8, 8, 10);
-		model.createField();
 		MinesweeperView view = null;
 		System.out.println(" акой представление игры?");
 		System.out.println("1-консольное");
@@ -44,7 +45,8 @@ public class Main {
 
 		default:
 			break;
-		}			
+		}	
+		MinesweeperService.getInstance().createField(model);
 		MinesweeperService.getInstance().setModel(model);
 		MinesweeperService.getInstance().setView(view);
 		if(key==1){((MinesweeperViewConsole) view).game();}

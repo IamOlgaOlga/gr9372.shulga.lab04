@@ -15,7 +15,7 @@ public class MinesweeperButton extends JButton implements Element {
 	private ImageIcon image = null;
 
 	@Override
-	public Boolean Flag() {
+	public Boolean isFlag() {
 		return flag;
 	}
 
@@ -75,16 +75,21 @@ public class MinesweeperButton extends JButton implements Element {
 		image = new ImageIcon(getClass().getResource("/bomb.jpg"));
 		setIcon(image);
 	}
-
+	
+	@Override
 	public void setOpen(Boolean flag) {
 		this.open = flag;
 	}
 
+
+	@Override
 	public void setOpen() {
 		this.open = true;
 	}
 
-	public Boolean open() {
+
+	@Override
+	public Boolean isOpen() {
 		return this.open;
 	}
 
@@ -105,8 +110,13 @@ public class MinesweeperButton extends JButton implements Element {
 	}
 
 	@Override
-	public Boolean Mine() {		
+	public Boolean isMine() {		
 		return mine;
+	}
+
+	@Override
+	public int getNumberMines() {		
+		return value;
 	}
 
 }

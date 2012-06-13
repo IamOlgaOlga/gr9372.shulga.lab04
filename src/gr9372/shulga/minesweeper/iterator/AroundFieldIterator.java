@@ -46,7 +46,7 @@ public class AroundFieldIterator implements Iterator<Boolean> {
 			row = startRow;
 			++col;
 		}
-		return model.getVal(row + curentRow, col + curentCol);
+		return model.getValue(row + curentRow, col + curentCol);
 	}
 
 	@Override

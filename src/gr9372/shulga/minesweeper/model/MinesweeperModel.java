@@ -7,47 +7,31 @@ public class MinesweeperModel {
 	private int rows;
 	private int mines;
 	private Boolean[][] field;
-	private MinesweeperModelIterator iterator = new MinesweeperModelIterator(
-			this);
+	
 
 	public MinesweeperModel(int rows, int cols, int mines) {
 		this.cols = cols;
 		this.rows = rows;
 		this.mines = mines;
 		this.field = new Boolean[rows][cols];
-	}
-
-	public void createField() {
-		int col = 0;
-		int row = 0;
-		Boolean element;
-		
-		while (iterator.hasNext()) {
-			element = iterator.next();
-			if (element == null) {
-				field[iterator.getRow()][iterator.getCol()] = false;
+		for(int i=0;i<rows;i++){
+			for(int j=0;j<cols;j++){
+				field[i][j]=false;				
 			}
 		}
-
-		for (int i = 1; i <= mines; i++) {
-			
-			col = (int) Math.round(Math.random() * (cols - 2));
-			row = (int) Math.round(Math.random() * (rows - 2));
-			if(!field[row + 1][col + 1]){
-				field[row + 1][col + 1] = true;
-			}else{i--;}
-			
-			
-		}
-
 		
 	}
+
 
 	public int getMines() {
 		return mines;
 	}
+	
+	public void setValue(int row,int col,Boolean mine){
+		this.field[row][col]=mine;
+	}
 
-	public Boolean getVal(int row, int col) {
+	public Boolean getValue(int row, int col) {
 		return field[row][col];
 	}
 
