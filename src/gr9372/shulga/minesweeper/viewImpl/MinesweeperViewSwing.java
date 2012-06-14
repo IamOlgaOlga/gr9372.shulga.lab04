@@ -60,15 +60,16 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 
 	private JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
-		JMenu menuGame = new JMenu("Игра");
-		JMenu menuNewGame = new JMenu("Новая игра");
-		menuNewGame.add(getJMenuItem("Новичок"));
-		menuNewGame.add(getJMenuItem("Любитель"));
-		menuNewGame.add(getJMenuItem("Профессионал"));
+		JMenu menuGame = new JMenu("РРіСЂР°");
+		JMenu menuNewGame = new JMenu("РќРѕРІР°СЏ РёРіСЂР°");
+		menuNewGame.add(getJMenuItem("РќРѕРІРёС‡РѕРє"));
+		menuNewGame.add(getJMenuItem("Р›СЋР±РёС‚РµР»СЊ"));
+		menuNewGame.add(getJMenuItem("РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»"));
 		menuGame.add(menuNewGame);
 		menuBar.add(menuGame);
 		return menuBar;
 	}
+
 
 	private JMenuItem getJMenuItem(String name) {
 		JMenuItem jMenuItem = new JMenuItem(name);
@@ -117,17 +118,17 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 		MinesweeperModel newModel = null;
 		JMenuItem jMenuItem = (JMenuItem) event.getSource();
 		String nameJMenuItem = jMenuItem.getName();
-		if (nameJMenuItem.equals("Новичок")) {
+		if (nameJMenuItem.equals("РќРѕРІРёС‡РѕРє")) {
 			model = new MinesweeperModel(8, 8, 10);
 			width = 400;
 			height = 400;
 		}
-		if (nameJMenuItem.equals("Любитель")) {
+		if (nameJMenuItem.equals("Р›СЋР±РёС‚РµР»СЊ")) {
 			model = new MinesweeperModel(16, 16, 40);
 			width = 600;
 			height = 500;
 		}
-		if (nameJMenuItem.equals("Профессионал")) {
+		if (nameJMenuItem.equals("РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»")) {
 			model = new MinesweeperModel(16, 30, 99);
 			width = 800;
 			height = 800;
@@ -135,11 +136,7 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 		setSize(width, height);
 		createNewField();
 	}
-/*
-	@Override
-	public void setVal(int value) {
-		this.value = value;
-	}**/
+
 
 	@Override
 	public Object getListElement() {
@@ -166,9 +163,9 @@ public class MinesweeperViewSwing extends JFrame implements MinesweeperView {
 			}
 		}
 		if (situation) {
-			text = "Поздравляем!Вы выйграли!Лалала";
+			text = "РџРѕР·РґСЂР°РІР»СЏРµРј!Р’С‹ РІС‹Р№РіСЂР°Р»Рё!Р›Р°Р»Р°Р»Р°";
 		} else {
-			text = "Вы проиграли.";
+			text = "Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё.";
 		}
 		createWindowEnd(text);
 	}

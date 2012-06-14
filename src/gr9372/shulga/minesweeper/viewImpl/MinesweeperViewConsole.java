@@ -36,19 +36,19 @@ public class MinesweeperViewConsole implements MinesweeperView {
 	
 	public void game(){
 		while(!exit){
-		System.out.println("поставить флаг или открыть поле?");
-		System.out.println("1-флаг;");
-		System.out.println("2-открыть поле.");
+		System.out.println("РїРѕСЃС‚Р°РІРёС‚СЊ С„Р»Р°Рі РёР»Рё РѕС‚РєСЂС‹С‚СЊ РїРѕР»Рµ?");
+		System.out.println("1-С„Р»Р°Рі;");
+		System.out.println("2-РѕС‚РєСЂС‹С‚СЊ РїРѕР»Рµ.");
 		int action=scanner.nextInt();
-		System.out.println("Ввидите координаты поля:");
-		System.out.println("введите значение строки:");
+		System.out.println("Р’РІРёРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ РїРѕР»СЏ:");
+		System.out.println("РІРІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ СЃС‚СЂРѕРєРё:");
 		row=scanner.nextInt()-1;
-		System.out.println("введите значение столбца:");
+		System.out.println("РІРІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ СЃС‚РѕР»Р±С†Р°:");
 		col=scanner.nextInt()-1;		
 		switch (action) {
 		case 1:
 			MinesweeperService.getInstance().setFlag(row, col);
-			System.out.println("Осталось флажков:"+mines+"/"+model.getMines());
+			System.out.println("РћСЃС‚Р°Р»РѕСЃСЊ С„Р»Р°Р¶РєРѕРІ:"+mines+"/"+model.getMines());
 			break;
 		case 2:
 		
@@ -93,17 +93,17 @@ public class MinesweeperViewConsole implements MinesweeperView {
 			}
 		}
 		if (situation) {
-			text = "Поздравляем!Вы выйграли!Лалала";
+			text = "РџРѕР·РґСЂР°РІР»СЏРµРј!Р’С‹ РІС‹Р№РіСЂР°Р»Рё!Р›Р°Р»Р°Р»Р°";
 		} else {
-			text = "Вы проиграли.";
+			text = "Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё.";
 		}	
 		System.out.println(text);
-		System.out.println("Ваше время:"+time);
+		System.out.println("Р’Р°С€Рµ РІСЂРµРјСЏ:"+time);
 		System.out.println("------------------------------");
-		System.out.println("Что дальше?");
-		System.out.println("1-заново;");
-		System.out.println("2-новая игра;");
-		System.out.println("3-выход");
+		System.out.println("Р§С‚Рѕ РґР°Р»СЊС€Рµ?");
+		System.out.println("1-Р·Р°РЅРѕРІРѕ;");
+		System.out.println("2-РЅРѕРІР°СЏ РёРіСЂР°;");
+		System.out.println("3-РІС‹С…РѕРґ");
 		int key=scanner.nextInt();
 		switch (key) {
 		case 1:
@@ -112,10 +112,10 @@ public class MinesweeperViewConsole implements MinesweeperView {
 			
 			break;
 		case 2:
-			System.out.println("какой уровень?");
-			System.out.println("1-новичок;");
-			System.out.println("2-любитель;");
-			System.out.println("3-профессионал");
+			System.out.println("РєР°РєРѕР№ СѓСЂРѕРІРµРЅСЊ?");
+			System.out.println("1-РЅРѕРІРёС‡РѕРє;");
+			System.out.println("2-Р»СЋР±РёС‚РµР»СЊ;");
+			System.out.println("3-РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»");
 			key=scanner.nextInt();
 			newGame(key);
 			break;

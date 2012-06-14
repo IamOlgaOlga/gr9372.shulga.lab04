@@ -26,8 +26,8 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		MinesweeperModel model = new MinesweeperModel(8, 8, 10);
 		MinesweeperView view = null;
-		System.out.println("Какой представление игры?");
-		System.out.println("1-консольное");
+		System.out.println("РљР°РєРѕР№ РІРІРѕРґ?");
+		System.out.println("1-concole");
 		System.out.println("2-Swing");
 		int key = scanner.nextInt();
 		switch (key) {
